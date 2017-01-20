@@ -1,0 +1,12 @@
+[package]
+name = "openzip"
+version = "0.1.0"
+authors = ["Ilyas Garaev <vearagi@gmail.com>"]
+
+[dependencies]
+zip = "0.2"
+libc = "0.2"
+
+[lib]
+name = "openzip"
+crate-type = ["dylib"]
