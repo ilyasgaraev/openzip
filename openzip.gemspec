@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ilyas Garaev"]
   spec.email         = ["vearagi@gmail.com"]
 
-  spec.summary       = "Openzip is a Ruby library for fast reading Zip files."
-  spec.description   = "Openzip is a Ruby library for fast reading Zip files."
+  spec.summary       = "Openzip is a Ruby library (written in Rust) for fast reading Zip files."
+  spec.description   = "Openzip is a Ruby library (written in Rust) for fast reading Zip files."
   spec.homepage      = "https://github.com/ilyasgaraev/openzip"
   spec.license       = "MIT"
 
@@ -19,6 +19,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.extensions    = Dir["source/extconf.rb"]
+
+  spec.required_ruby_version = "~> 2.0"
 
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "pry", "~> 0.10"
