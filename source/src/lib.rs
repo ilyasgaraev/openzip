@@ -2,6 +2,7 @@ extern crate libc;
 
 mod extractor;
 
+use std::env;
 use std::path::Path;
 use std::ffi::CStr;
 
@@ -14,7 +15,10 @@ pub extern fn extract_rust(zip: *const libc::c_char, outdir: *const libc::c_char
     return match extractor::run(zippath, outdirpath) {
         Ok(_) => true,
         Err(e) => {
-            println!("Error: {}", e);
+            if env::var("DEBUG").ok() == Some(String::from("true")) {
+                println!("Error: {}", e);
+            }
+
             false
         }
     }

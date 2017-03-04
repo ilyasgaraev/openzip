@@ -10,21 +10,33 @@
 
 ## Usage
 
-Before you begin, you need to install both Rust and Cargo on your system ([https://www.rust-lang.org](https://www.rust-lang.org)).
+Before you begin, you need to install Rust (with Cargo) on your system (see [Requirements](#requirements)).
 
 ```ruby
-path_to_zip = "path/to/zipfile.zip"
-extract_to_path = "path/to/extract"
-
-Openzip.extract(path_to_zip, extract_to_path) # returns true if method was executed successfully
+Openzip.extract("path/to/file.zip", "extract/path")
+# returns true if the method successfully executed; otherwise, false
 ```
+
+The **DEBUG** environment variable can be used to enable debug logs:
+
+```ruby
+# DEBUG=true
+Openzip.extract("wrong/path/file.zip", "extract/path")
+# Error: No such file or directory (os error 2)
+# => false
+```
+
+## Requirements
+
+* Rust and Cargo ([https://www.rust-lang.org/en-US/install.html](https://www.rust-lang.org/en-US/install.html))
+* Ruby 2.0 or greater
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'openzip'
+gem "openzip"
 ```
 
 And then execute:

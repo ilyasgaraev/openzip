@@ -1,4 +1,5 @@
 require "spec_helper"
+require "climate_control"
 
 describe Openzip do
   describe ".lib_ext" do
@@ -10,7 +11,7 @@ describe Openzip do
       let(:platform) { "mswin32" }
 
       it "raises error" do
-        expect { lib_ext }.to raise_error
+        expect { lib_ext }.to raise_error(NotImplementedError)
       end
     end
 
@@ -67,6 +68,33 @@ describe Openzip do
       let(:zipfile) { "spec/fixtures" }
 
       it { is_expected.to be_falsey }
+    end
+
+    describe "debug mode" do
+      let(:zipfile) { "spec/fixtures/wrong.zip" }
+
+      specify { expect { extract_zip }.to_not output.to_stdout_from_any_process }
+
+      context "when DEBUG env variable is defined" do
+        around do |example|
+          ClimateControl.modify DEBUG: debug_mode do
+            example.run
+          end
+        end
+
+        context "and equals true" do
+          let(:debug_mode) { "true" }
+          let(:error_message) { "Error: No such file or directory (os error 2)\n" }
+
+          specify { expect { extract_zip }.to output(error_message).to_stdout_from_any_process }
+        end
+
+        context "and equals false" do
+          let(:debug_mode) { "false" }
+
+          specify { expect { extract_zip }.to_not output.to_stdout_from_any_process }
+        end
+      end
     end
   end
 end

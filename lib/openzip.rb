@@ -5,7 +5,7 @@ module Openzip
   extend Fiddle::Importer
 
   def self.lib_ext
-    raise "Sorry, Windows is not supported" if RUBY_PLATFORM =~ /win32/
+    raise NotImplementedError, "Sorry, Windows is not supported" if RUBY_PLATFORM =~ /win32/
 
     RUBY_PLATFORM =~ /darwin/ ? "dylib" : "so"
   end
