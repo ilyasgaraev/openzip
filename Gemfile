@@ -9,6 +9,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "climate_control"
   gem "codeclimate-test-reporter", "~> 1.0.0", require: false
   gem "simplecov", require: false
 end

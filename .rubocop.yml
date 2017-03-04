@@ -32,6 +32,10 @@ Metrics/LineLength:
   Description: 'Limit lines to 120 characters.'
   Max: 120
 
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
+
 Lint/EndAlignment:
   EnforcedStyleAlignWith: variable
   SupportedStylesAlignWith:
@@ -54,3 +58,9 @@ Style/StringMethods:
 RSpec/MessageSpies:
   Enabled: true
   EnforcedStyle: receive
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false

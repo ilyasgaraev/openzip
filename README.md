@@ -6,23 +6,37 @@
 [![Gem](https://img.shields.io/gem/v/openzip.svg?style=flat-square)](https://github.com/ilyasgaraev/openzip)
 
 
-**Openzip** is a Ruby library for fast extract Zip files.
+**Openzip** is a Ruby library (written in Rust) for fast extract Zip files.
 
 ## Usage
 
-```ruby
-path_to_zip = "path/to/zipfile.zip"
-extract_to_path = "path/to/extract"
+Before you begin, you need to install Rust (with Cargo) on your system (see [Requirements](#requirements)).
 
-Openzip.extract(path_to_zip, extract_to_path)
+```ruby
+Openzip.extract("path/to/file.zip", "extract/path")
+# returns true if the method successfully executed; otherwise, false
 ```
+
+The **DEBUG** environment variable can be used to enable debug logs:
+
+```ruby
+# DEBUG=true
+Openzip.extract("wrong/path/file.zip", "extract/path")
+# Error: No such file or directory (os error 2)
+# => false
+```
+
+## Requirements
+
+* Rust and Cargo ([https://www.rust-lang.org/en-US/install.html](https://www.rust-lang.org/en-US/install.html))
+* Ruby 2.0 or greater
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'openzip'
+gem "openzip"
 ```
 
 And then execute:
