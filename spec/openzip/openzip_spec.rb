@@ -73,7 +73,7 @@ describe Openzip do
     describe "debug mode" do
       let(:zipfile) { "spec/fixtures/wrong.zip" }
 
-      specify { expect { extract_zip }.to_not output.to_stdout_from_any_process }
+      specify { expect { extract_zip }.not_to output.to_stdout_from_any_process }
 
       context "when DEBUG env variable is defined" do
         around do |example|
@@ -92,7 +92,7 @@ describe Openzip do
         context "and equals false" do
           let(:debug_mode) { "false" }
 
-          specify { expect { extract_zip }.to_not output.to_stdout_from_any_process }
+          specify { expect { extract_zip }.not_to output.to_stdout_from_any_process }
         end
       end
     end
