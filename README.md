@@ -31,6 +31,11 @@ Openzip.extract("wrong/path/file.zip", "extract/path")
 * Rust and Cargo ([https://www.rust-lang.org/en-US/install.html](https://www.rust-lang.org/en-US/install.html))
 * Ruby 2.0 or greater
 
+## Benchmarking
+
+* Memory usage: [benchmarking/memory.md](benchmarking/memory.md)
+* Iterations per second: [benchmarking/iterations.md](benchmarking/iterations.md)
+
 ## Installation
 
 Add this line to your application's Gemfile:
