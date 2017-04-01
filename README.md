@@ -1,6 +1,6 @@
 # Openzip
 
-[![Build Status](https://img.shields.io/travis/ilyasgaraev/openzip.svg?branch=master&style=flat-square)](https://travis-ci.org/ilyasgaraev/openzip)
+[![Build Status](https://img.shields.io/travis/ilyasgaraev/openzip/master.svg?style=flat-square)](https://travis-ci.org/ilyasgaraev/openzip)
 [![Code Climate](https://img.shields.io/codeclimate/github/ilyasgaraev/openzip.svg?style=flat-square)](https://codeclimate.com/github/ilyasgaraev/openzip)
 [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/ilyasgaraev/openzip.svg?style=flat-square)](https://codeclimate.com/github/ilyasgaraev/openzip/coverage)
 [![Gem](https://img.shields.io/gem/v/openzip.svg?style=flat-square)](https://github.com/ilyasgaraev/openzip)
