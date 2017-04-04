@@ -53,7 +53,7 @@ describe Openzip do
     describe "file content" do
       subject { Dir["#{extract_path}/*.txt"].map { |filename| File.read(filename) } }
 
-      let(:expected_content) { %w(SpecialChars Test1 Test2 Test3) }
+      let(:expected_content) { %w[SpecialChars Test1 Test2 Test3] }
 
       it { is_expected.to match_array(expected_content) }
     end
