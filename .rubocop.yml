@@ -36,14 +36,14 @@ Metrics/BlockLength:
   Exclude:
     - spec/**/*.rb
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
   SupportedStylesAlignWith:
     - keyword
     - variable
     - start_of_line
 
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
   SupportedStyles:
     - with_first_parameter
@@ -63,4 +63,16 @@ RSpec/MultipleExpectations:
   Enabled: false
 
 RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/ContextWording:
+  Prefixes:
+    - when
+    - with
+    - without
+    - if
+    - and
+    - but
+
+Gemspec/RequiredRubyVersion:
   Enabled: false
